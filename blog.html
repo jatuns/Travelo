@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog - Travelo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .blog-header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/blog-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .blog-container {
+            padding: 30px 0;
+        }
+        .blog-post {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        .blog-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .blog-meta {
+            color: #757575;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        .blog-title {
+            margin-top: 0;
+        }
+        .comment-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .comment {
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .comment-author {
+            font-weight: bold;
+        }
+        .comment-date {
+            font-size: 0.8rem;
+            color: #757575;
+        }
+        .comment-form {
+            margin-top: 30px;
+        }
+        #comments-list {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="blue darken-2">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo">Travelo</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="packages.html">Tour Packages</a></li>
+                <li><a href="reservation.html">Book Now</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li class="active"><a href="blog.html">Blog</a></li>
+                <li><a href="game.html">Packing Game</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="packages.html">Tour Packages</a></li>
+        <li><a href="reservation.html">Book Now</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li class="active"><a href="blog.html">Blog</a></li>
+        <li><a href="game.html">Packing Game</a></li>
+    </ul>
+
+    <div class="blog-header">
+        <div class="container">
+            <h1>Travel Blog</h1>
+            <p class="flow-text">Stories and tips from travel enthusiasts</p>
+        </div>
+    </div>
+
+    <div class="container blog-container">
+        <div class="row">
+            <div class="col s12">
+                <div id="blog-post1" class="blog-post">
+                    <img src="images/blog1.jpg" alt="Blog Image 1" class="blog-image">
+                    <div class="blog-meta">
+                        <span><i class="tiny material-icons">person</i> Sarah Johnson</span>
+                        <span><i class="tiny material-icons">access_time</i> April 15, 2025</span>
+                        <span><i class="tiny material-icons">place</i> Paris, France</span>
+                    </div>
+                    <h4 class="blog-title">A Week in Paris: Beyond the Eiffel Tower</h4>
+                    <p>Paris, the city of love and lights, offers so much more than just the iconic Eiffel Tower. During my recent week-long trip, I discovered hidden gems that many tourists miss when they visit this beautiful city.</p>
+                    <p>While the Eiffel Tower, Louvre, and Notre Dame are must-visit attractions, don't miss out on exploring the charming neighborhoods of Montmartre and Le Marais. Here you'll find local cafés, boutique shops, and a glimpse into the authentic Parisian lifestyle.</p>
+                    <p>One of my favorite discoveries was the Sainte-Chapelle, a Gothic chapel with stunning stained glass windows that will take your breath away. Another highlight was taking a sunset boat ride along the Seine River, offering a different perspective of the city's architecture.</p>
+                    <p>For food lovers, skip the touristy restaurants and venture into the side streets where you'll find family-owned bistros serving traditional French cuisine at reasonable prices. Don't forget to visit a local bakery early in the morning for freshly baked croissants – a simple but unforgettable Parisian experience.</p>
+                    <div class="comment-section">
+                        <h5>Comments (3)</h5>
+                        <div id="comments-list">
+                            <div class="comment">
+                                <div class="comment-author">John Smith</div>
+                                <div class="comment-date">April 16, 2025</div>
+                                <p>Great insights! I'm planning a trip to Paris next month and will definitely check out Sainte-Chapelle. Any specific restaurants you'd recommend in Le Marais?</p>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-author">Emily Davis</div>
+                                <div class="comment-date">April 17, 2025</div>
+                                <p>I visited Paris last year and totally agree about the boat ride on the Seine! It was the highlight of my trip. The views at sunset are magical.</p>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-author">Michael Wilson</div>
+                                <div class="comment-date">April 18, 2025</div>
+                                <p>Thanks for sharing! How many days would you recommend for a first-time visitor to fully experience Paris?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comment-form">
+                            <h5>Leave a Comment</h5>
+                            <form id="comment-form">
+                                <div class="input-field">
+                                    <input id="comment-name" type="text" class="validate" required>
+                                    <label for="comment-name">Your Name</label>
+                                </div>
+                                <div class="input-field">
+                                    <input id="comment-email" type="email" class="validate" required>
+                                    <label for="comment-email">Your Email</label>
+                                </div>
+                                <div class="input-field">
+                                    <textarea id="comment-text" class="materialize-textarea" required></textarea>
+                                    <label for="comment-text">Your Comment</label>
+                                </div>
+                                <button class="btn waves-effect waves-light blue" type="submit">
+                                    Submit Comment
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="blog-post2" class="blog-post">
+                    <img src="images/blog2.jpg" alt="Blog Image 2" class="blog-image">
+                    <div class="blog-meta">
+                        <span><i class="tiny material-icons">person</i> David Chen</span>
+                        <span><i class="tiny material-icons">access_time</i> April 8, 2025</span>
+                        <span><i class="tiny material-icons">place</i> Bali, Indonesia</span>
+                    </div>
+                    <h4 class="blog-title">Bali on a Budget: Experiencing Paradise Without Breaking the Bank</h4>
+                    <p>Bali, Indonesia's tropical paradise, has a reputation for luxury resorts and expensive experiences. However, I recently spent two weeks exploring this beautiful island on a modest budget, and I'm excited to share how you can enjoy the best of Bali without emptying your wallet.</p>
+                    <p>Instead of staying in touristy areas like Kuta or Seminyak, consider accommodations in Ubud or Canggu, where you can find comfortable guesthouses for a fraction of the price. Many include breakfast and have beautiful garden or rice field views.</p>
+                    <p>For food, local warungs (small family-owned restaurants) offer delicious Indonesian dishes at incredibly affordable prices. My favorite meal was Nasi Campur, a mixed plate with rice, vegetables, and various meat or tofu options that typically costs less than $3.</p>
+                    <p>Transportation can be cheap too – rent a scooter for around $5 per day to explore at your own pace. Just make sure you have an international driver's license and always wear a helmet!</p>
+                    <div class="comment-section">
+                        <h5>Comments (0)</h5>
+                        <div id="comments-list-post2">
+                            <!-- Comments will appear here -->
+                        </div>
+                        
+                        <div class="comment-form">
+                            <h5>Leave a Comment</h5>
+                            <form id="comment-form-post2">
+                                <div class="input-field">
+                                    <input id="comment-name-post2" type="text" class="validate" required>
+                                    <label for="comment-name-post2">Your Name</label>
+                                </div>
+                                <div class="input-field">
+                                    <input id="comment-email-post2" type="email" class="validate" required>
+                                    <label for="comment-email-post2">Your Email</label>
+                                </div>
+                                <div class="input-field">
+                                    <textarea id="comment-text-post2" class="materialize-textarea" required></textarea>
+                                    <label for="comment-text-post2">Your Comment</label>
+                                </div>
+                                <button class="btn waves-effect waves-light blue" type="submit">
+                                    Submit Comment
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer blue darken-2">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6">
+                    <h5 class="white-text">Travelo</h5>
+                    <p class="grey-text text-lighten-4">Your trusted travel partner for unforgettable adventures around the world.</p>
+                </div>
+                <div class="col s12 m6">
+                    <h5 class="white-text">Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="white-text"><i class="material-icons">facebook</i></a>
+                        <a href="#" class="white-text"><i class="material-icons">insert_chart</i></a>
+                        <a href="#" class="white-text"><i class="material-icons">photo_camera</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2025 Travelo - All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/blog.js"></script>
+</body>
+</html> 

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery - Travelo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gallery-header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/gallery-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .gallery-container {
+            padding: 30px 0;
+        }
+        .gallery-item {
+            margin-bottom: 30px;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-item .caption {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover .caption {
+            transform: translateY(0);
+        }
+        .filter-buttons {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="blue darken-2">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo">Travelo</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="packages.html">Tour Packages</a></li>
+                <li><a href="reservation.html">Book Now</a></li>
+                <li class="active"><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="game.html">Packing Game</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="packages.html">Tour Packages</a></li>
+        <li><a href="reservation.html">Book Now</a></li>
+        <li class="active"><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="game.html">Packing Game</a></li>
+    </ul>
+
+    <div class="gallery-header">
+        <div class="container">
+            <h1>Travel Photo Gallery</h1>
+            <p class="flow-text">Explore breathtaking views from around the world</p>
+        </div>
+    </div>
+
+    <div class="container gallery-container">
+        <div class="center-align filter-buttons">
+            <button class="btn waves-effect waves-light blue filter-btn active" data-filter="all">All</button>
+            <button class="btn waves-effect waves-light blue filter-btn" data-filter="europe">Europe</button>
+            <button class="btn waves-effect waves-light blue filter-btn" data-filter="asia">Asia</button>
+            <button class="btn waves-effect waves-light blue filter-btn" data-filter="america">America</button>
+            <button class="btn waves-effect waves-light blue filter-btn" data-filter="africa">Africa</button>
+        </div>
+        
+        <div class="row gallery-items">
+            <div class="col s12 m6 l4 gallery-item" data-category="europe">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="images/gallery1.jpg" data-lightbox="travel-gallery" data-title="Eiffel Tower, Paris">
+                            <img src="images/gallery1.jpg" alt="Paris">
+                            <div class="caption">
+                                <h5>Paris, France</h5>
+                                <p>The iconic Eiffel Tower</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s12 m6 l4 gallery-item" data-category="europe">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="images/gallery2.jpg" data-lightbox="travel-gallery" data-title="Venice Canals, Italy">
+                            <img src="images/gallery2.jpg" alt="Venice">
+                            <div class="caption">
+                                <h5>Venice, Italy</h5>
+                                <p>Beautiful canals and gondolas</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s12 m6 l4 gallery-item" data-category="europe">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="images/gallery3.jpg" data-lightbox="travel-gallery" data-title="Santorini, Greece">
+                            <img src="images/gallery3.jpg" alt="Santorini">
+                            <div class="caption">
+                                <h5>Santorini, Greece</h5>
+                                <p>White buildings with blue domes</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s12 m6 l4 gallery-item" data-category="asia">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="images/gallery4.jpg" data-lightbox="travel-gallery" data-title="Bali, Indonesia">
+                            <img src="images/gallery4.jpg" alt="Bali">
+                            <div class="caption">
+                                <h5>Bali, Indonesia</h5>
+                                <p>Tropical paradise with temples</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s12 m6 l4 gallery-item" data-category="asia">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="images/gallery5.jpg" data-lightbox="travel-gallery" data-title="Tokyo, Japan">
+                            <img src="images/gallery5.jpg" alt="Tokyo">
+                            <div class="caption">
+                                <h5>Tokyo, Japan</h5>
+                                <p>Modern city with traditional roots</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s12 m6 l4 gallery-item" data-category="america">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="images/gallery6.jpg" data-lightbox="travel-gallery" data-title="New York City, USA">
+                            <img src="images/gallery6.jpg" alt="New York">
+                            <div class="caption">
+                                <h5>New York, USA</h5>
+                                <p>The city that never sleeps</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s12 m6 l4 gallery-item" data-category="america">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="images/gallery7.jpg" data-lightbox="travel-gallery" data-title="Grand Canyon, USA">
+                            <img src="images/gallery7.jpg" alt="Grand Canyon">
+                            <div class="caption">
+                                <h5>Grand Canyon, USA</h5>
+                                <p>Natural wonder of the world</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s12 m6 l4 gallery-item" data-category="africa">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="images/gallery8.jpg" data-lightbox="travel-gallery" data-title="Safari, Kenya">
+                            <img src="images/gallery8.jpg" alt="Kenya Safari">
+                            <div class="caption">
+                                <h5>Kenya Safari</h5>
+                                <p>Wildlife in their natural habitat</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s12 m6 l4 gallery-item" data-category="africa">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="images/gallery9.jpg" data-lightbox="travel-gallery" data-title="Pyramids, Egypt">
+                            <img src="images/gallery9.jpg" alt="Egypt Pyramids">
+                            <div class="caption">
+                                <h5>Egypt</h5>
+                                <p>Ancient pyramids and history</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer blue darken-2">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6">
+                    <h5 class="white-text">Travelo</h5>
+                    <p class="grey-text text-lighten-4">Your trusted travel partner for unforgettable adventures around the world.</p>
+                </div>
+                <div class="col s12 m6">
+                    <h5 class="white-text">Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="white-text"><i class="material-icons">facebook</i></a>
+                        <a href="#" class="white-text"><i class="material-icons">insert_chart</i></a>
+                        <a href="#" class="white-text"><i class="material-icons">photo_camera</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2025 Travelo - All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="scripts/gallery.js"></script>
+</body>
+</html> 

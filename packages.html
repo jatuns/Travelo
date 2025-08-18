@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Packages - Travelo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .package-header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/package-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .package-card {
+            height: 100%;
+        }
+        .package-card .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        .package-features {
+            margin-top: 15px;
+        }
+        .package-features li {
+            margin-bottom: 8px;
+        }
+        .tabs .tab a {
+            color: #1565C0;
+        }
+        .tabs .tab a:hover,
+        .tabs .tab a.active {
+            background-color: transparent;
+            color: #1565C0;
+        }
+        .tabs .indicator {
+            background-color: #1565C0;
+        }
+        .tabs-content {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="blue darken-2">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo">Travelo</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="packages.html">Tour Packages</a></li>
+                <li><a href="reservation.html">Book Now</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="game.html">Packing Game</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="packages.html">Tour Packages</a></li>
+        <li><a href="reservation.html">Book Now</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="game.html">Packing Game</a></li>
+    </ul>
+
+    <div class="package-header">
+        <div class="container">
+            <h1>Tour Packages</h1>
+            <p class="flow-text">Choose from our carefully curated travel experiences</p>
+        </div>
+    </div>
+
+    <div class="container section">
+        <ul class="tabs">
+            <li class="tab col s3"><a class="active" href="#europe">Europe</a></li>
+            <li class="tab col s3"><a href="#asia">Asia</a></li>
+            <li class="tab col s3"><a href="#america">America</a></li>
+            <li class="tab col s3"><a href="#africa">Africa</a></li>
+        </ul>
+    </div>
+
+    <div class="container section">
+        <div class="tabs-content">
+            <div id="europe" class="col s12">
+                <h4>European Adventures</h4>
+                <p>Explore the rich history, culture, and breathtaking landscapes of Europe.</p>
+                
+                <div class="row">
+                    <div class="col s12 m6 l4">
+                        <div class="card package-card">
+                            <div class="card-image">
+                                <img src="images/europe1.jpg" alt="European Tour 1">
+                                <span class="card-title">Italian Escapade</span>
+                            </div>
+                            <div class="card-content">
+                                <span class="new badge blue" data-badge-caption="Popular"></span>
+                                <p><b>Duration:</b> 7 Days</p>
+                                <p><b>Price:</b> $1,499</p>
+                                <p>Experience the beauty of Italy through Rome, Florence, and Venice.</p>
+                                <ul class="package-features">
+                                    <li><i class="tiny material-icons">hotel</i> 4-star accommodations</li>
+                                    <li><i class="tiny material-icons">directions_car</i> Private transportation</li>
+                                    <li><i class="tiny material-icons">restaurant</i> Breakfast included</li>
+                                </ul>
+                            </div>
+                            <div class="card-action">
+                                <a href="reservation.html" class="btn blue waves-effect waves-light">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col s12 m6 l4">
+                        <div class="card package-card">
+                            <div class="card-image">
+                                <img src="images/europe2.jpg" alt="European Tour 2">
+                                <span class="card-title">Paris & London</span>
+                            </div>
+                            <div class="card-content">
+                                <span class="new badge green" data-badge-caption="20% Off"></span>
+                                <p><b>Duration:</b> 6 Days</p>
+                                <p><b>Price:</b> $1,299</p>
+                                <p>Experience the charm of two of Europe's most iconic cities.</p>
+                                <ul class="package-features">
+                                    <li><i class="tiny material-icons">hotel</i> 4-star accommodations</li>
+                                    <li><i class="tiny material-icons">train</i> Eurostar train included</li>
+                                    <li><i class="tiny material-icons">restaurant</i> Daily breakfast</li>
+                                </ul>
+                            </div>
+                            <div class="card-action">
+                                <a href="reservation.html" class="btn blue waves-effect waves-light">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col s12 m6 l4">
+                        <div class="card package-card">
+                            <div class="card-image">
+                                <img src="images/europe3.jpg" alt="European Tour 3">
+                                <span class="card-title">Greek Islands</span>
+                            </div>
+                            <div class="card-content">
+                                <p><b>Duration:</b> 10 Days</p>
+                                <p><b>Price:</b> $1,899</p>
+                                <p>Island hopping in Greece visiting Athens, Mykonos, and Santorini.</p>
+                                <ul class="package-features">
+                                    <li><i class="tiny material-icons">hotel</i> Boutique hotels</li>
+                                    <li><i class="tiny material-icons">directions_boat</i> Ferry transfers</li>
+                                    <li><i class="tiny material-icons">beach_access</i> Beach activities</li>
+                                </ul>
+                            </div>
+                            <div class="card-action">
+                                <a href="reservation.html" class="btn blue waves-effect waves-light">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="asia" class="col s12">
+                <h4>Asian Experiences</h4>
+                <p>Discover the vibrant cultures and stunning landscapes of Asia.</p>
+                
+                <div class="row">
+                    <div class="col s12 m6 l4">
+                        <div class="card package-card">
+                            <div class="card-image">
+                                <img src="images/asia1.jpg" alt="Asian Tour 1">
+                                <span class="card-title">Thailand Adventure</span>
+                            </div>
+                            <div class="card-content">
+                                <p><b>Duration:</b> 8 Days</p>
+                                <p><b>Price:</b> $1,199</p>
+                                <p>Explore Bangkok, Chiang Mai, and the beautiful beaches of Phuket.</p>
+                                <ul class="package-features">
+                                    <li><i class="tiny material-icons">hotel</i> 4-star accommodations</li>
+                                    <li><i class="tiny material-icons">flight</i> Internal flights included</li>
+                                    <li><i class="tiny material-icons">spa</i> Thai massage experience</li>
+                                </ul>
+                            </div>
+                            <div class="card-action">
+                                <a href="reservation.html" class="btn blue waves-effect waves-light">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col s12 m6 l4">
+                        <div class="card package-card">
+                            <div class="card-image">
+                                <img src="images/asia2.jpg" alt="Asian Tour 2">
+                                <span class="card-title">Japan Explorer</span>
+                            </div>
+                            <div class="card-content">
+                                <span class="new badge blue" data-badge-caption="Popular"></span>
+                                <p><b>Duration:</b> 9 Days</p>
+                                <p><b>Price:</b> $2,299</p>
+                                <p>Discover the wonders of Tokyo, Kyoto, and Osaka.</p>
+                                <ul class="package-features">
+                                    <li><i class="tiny material-icons">hotel</i> Centrally located hotels</li>
+                                    <li><i class="tiny material-icons">train</i> Bullet train passes</li>
+                                    <li><i class="tiny material-icons">restaurant</i> Traditional dinner included</li>
+                                </ul>
+                            </div>
+                            <div class="card-action">
+                                <a href="reservation.html" class="btn blue waves-effect waves-light">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="america" class="col s12">
+                <h4>American Journeys</h4>
+                <p>Experience the diverse landscapes and cultures across the Americas.</p>
+                
+                <div class="row">
+                    <div class="col s12 m6 l4">
+                        <div class="card package-card">
+                            <div class="card-image">
+                                <img src="images/america1.jpg" alt="American Tour 1">
+                                <span class="card-title">New York City</span>
+                            </div>
+                            <div class="card-content">
+                                <p><b>Duration:</b> 5 Days</p>
+                                <p><b>Price:</b> $1,099</p>
+                                <p>Experience the hustle and bustle of the Big Apple.</p>
+                                <ul class="package-features">
+                                    <li><i class="tiny material-icons">hotel</i> Manhattan hotel</li>
+                                    <li><i class="tiny material-icons">directions_walk</i> Walking tours</li>
+                                    <li><i class="tiny material-icons">local_activity</i> Broadway show ticket</li>
+                                </ul>
+                            </div>
+                            <div class="card-action">
+                                <a href="reservation.html" class="btn blue waves-effect waves-light">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="africa" class="col s12">
+                <h4>African Safaris</h4>
+                <p>Embark on unforgettable adventures across the diverse landscapes of Africa.</p>
+                
+                <div class="row">
+                    <div class="col s12 m6 l4">
+                        <div class="card package-card">
+                            <div class="card-image">
+                                <img src="images/africa1.jpg" alt="African Tour 1">
+                                <span class="card-title">Kenya Safari</span>
+                            </div>
+                            <div class="card-content">
+                                <p><b>Duration:</b> 7 Days</p>
+                                <p><b>Price:</b> $2,499</p>
+                                <p>Witness the incredible wildlife in their natural habitat.</p>
+                                <ul class="package-features">
+                                    <li><i class="tiny material-icons">hotel</i> Luxury safari lodges</li>
+                                    <li><i class="tiny material-icons">directions_car</i> 4x4 safari vehicles</li>
+                                    <li><i class="tiny material-icons">photo_camera</i> Professional guide</li>
+                                </ul>
+                            </div>
+                            <div class="card-action">
+                                <a href="reservation.html" class="btn blue waves-effect waves-light">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer blue darken-2">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6">
+                    <h5 class="white-text">Travelo</h5>
+                    <p class="grey-text text-lighten-4">Your trusted travel partner for unforgettable adventures around the world.</p>
+                </div>
+                <div class="col s12 m6">
+                    <h5 class="white-text">Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="white-text"><i class="material-icons">facebook</i></a>
+                        <a href="#" class="white-text"><i class="material-icons">insert_chart</i></a>
+                        <a href="#" class="white-text"><i class="material-icons">photo_camera</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2025 Travelo - All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html> 

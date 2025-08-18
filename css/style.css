@@ -1,0 +1,39 @@
+/* Global Styles */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Navigation */
+.brand-logo {
+    padding-left: 10px;
+}
+
+/* Footer */
+.page-footer {
+    margin-top: 30px;
+}
+
+.social-links a {
+    margin-right: 15px;
+}
+
+/* Common Components */
+.section-title {
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.btn, .btn-large {
+    border-radius: 30px;
+    padding: 0 25px;
+}
+
+/* Responsive adjustments - REMOVED */ 

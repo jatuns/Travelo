@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packing Game - Travelo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .game-header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/game/game-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .game-container {
+            padding: 30px 0;
+        }
+        .game-board {
+            min-height: 500px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            padding: 20px;
+            position: relative;
+        }
+        .suitcase {
+            width: 100%;
+            height: 350px;
+            background-color: #e0e0e0;
+            border: 2px dashed #9e9e9e;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .suitcase-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+            z-index: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10rem;
+            color: #9e9e9e;
+        }
+        .item {
+            padding: 10px 15px;
+            background-color: white;
+            border-radius: 4px;
+            margin: 5px;
+            display: inline-block;
+            cursor: move;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            position: relative;
+            z-index: 1;
+            transition: transform 0.2s;
+            border-left: 4px solid #9e9e9e; /* Neutral border for all items */
+        }
+        .item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        }
+        .item i {
+            margin-right: 5px;
+            vertical-align: middle;
+            font-size: 1.5rem;
+        }
+        .item-container {
+            margin-top: 20px;
+        }
+        .draggable {
+            cursor: move;
+        }
+        .packed {
+            position: absolute;
+            z-index: 1;
+        }
+        .game-controls {
+            margin-top: 20px;
+        }
+        .destination-picker {
+            margin-bottom: 20px;
+        }
+        .timer-container {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+        .timer {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2196f3;
+            margin: 0;
+        }
+        #game-message {
+            color: #4caf50;
+            font-weight: bold;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .score-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+        .score {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2196f3;
+            margin: 0;
+        }
+        .item-type {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .item-indicator {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 3px;
+        }
+        .essential-indicator {
+            background-color: #4caf50;
+        }
+        .optional-indicator {
+            background-color: #ffeb3b;
+        }
+        .unnecessary-indicator {
+            background-color: #f44336;
+        }
+        .game-rules {
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+    </style>
+</head>
+<body>
+    <nav class="blue darken-2">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo">Travelo</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="packages.html">Tour Packages</a></li>
+                <li><a href="reservation.html">Book Now</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li class="active"><a href="game.html">Packing Game</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="packages.html">Tour Packages</a></li>
+        <li><a href="reservation.html">Book Now</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li class="active"><a href="game.html">Packing Game</a></li>
+    </ul>
+
+    <div class="game-header">
+        <div class="container">
+            <h1>Packing Suitcase Game</h1>
+            <p class="flow-text">Can you pack the perfect suitcase for your trip in 60 seconds?</p>
+        </div>
+    </div>
+
+    <div class="container game-container">
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Game Instructions</span>
+                        <div class="game-rules">
+                            <h5><i class="material-icons left">info_outline</i>How to Play</h5>
+                            <ol>
+                                <li>Choose a destination from the dropdown menu</li>
+                                <li>You have <strong>60 seconds</strong> to pack your suitcase with appropriate items</li>
+                                <li>Drag and drop items into your suitcase</li>
+                                <li>You need to think carefully about what items are appropriate for your destination!</li>
+                                <li>Essential items earn 20 points, useful items earn 10 points</li>
+                                <li>Unnecessary items will <strong>deduct 10 points</strong> and will be rejected from your suitcase</li>
+                                <li>Removing packed items will cost you points!</li>
+                                <li>You get bonus points for any time remaining on the clock</li>
+                                <li>Click "Ready to Go" when you're finished packing</li>
+                            </ol>
+                        </div>
+                        
+                        <div id="destination-selection">
+                            <div class="row destination-picker">
+                                <div class="col s12 m8 offset-m2">
+                                    <div class="input-field">
+                                        <select id="destination-select" class="browser-default">
+                                            <option value="" disabled selected>Choose your destination</option>
+                                            <option value="beach">Beach Vacation</option>
+                                            <option value="mountain">Mountain Adventure</option>
+                                            <option value="city">City Tour</option>
+                                            <option value="safari">Safari Expedition</option>
+                                        </select>
+                                    </div>
+                                    <div id="weather-info" class="center-align"></div>
+                                    <div class="center-align" style="margin-top: 20px;">
+                                        <button id="start-game-btn" class="btn-large waves-effect waves-light blue">
+                                            Start Game
+                                            <i class="material-icons right">play_arrow</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timer-container" style="display: none;">
+                            <p>Time Remaining:</p>
+                            <div class="timer">60</div>
+                        </div>
+                        
+                        <div id="game-board" class="game-board" style="display: none;">
+                            <div class="row">
+                                <div class="col s12 m4">
+                                    <div class="score-container">
+                                        <p>Score:</p>
+                                        <div class="score">0</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col s12 m8">
+                                    <div id="suitcase" class="suitcase">
+                                        <div class="suitcase-image">
+                                            <i class="fas fa-suitcase"></i>
+                                        </div>
+                                        <!-- Packed items will appear here -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="items-container" class="item-container">
+                                <h5>Available Items:</h5>
+                                <div id="items-list">
+                                    <!-- Items will be added dynamically based on destination -->
+                                </div>
+                            </div>
+                            
+                            <div class="game-controls center-align">
+                                <button id="ready-btn" class="btn-large waves-effect waves-light green">
+                                    Ready to Go!
+                                    <i class="material-icons right">check</i>
+                                </button>
+                                <button id="reset-btn" class="btn-large waves-effect waves-light red">
+                                    Reset
+                                    <i class="material-icons right">refresh</i>
+                                </button>
+                            </div>
+                            
+                            <div id="game-message" class="center-align"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <h4 class="center-align blue-text"><span id="game-over-reason">Great Job!</span></h4>
+            <p class="center-align">Your packing adventure is complete!</p>
+            <div class="center-align">
+                <i class="large material-icons blue-text">emoji_events</i>
+            </div>
+            
+            <div class="row">
+                <div class="col s12 m6 offset-m3">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title center-align">Score Summary</span>
+                            <table class="centered">
+                                <tbody>
+                                    <tr>
+                                        <td>Total Points:</td>
+                                        <td><strong id="final-points">0</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time Bonus:</td>
+                                        <td><strong id="time-bonus">0</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Final Score:</td>
+                                        <td><strong id="final-score" class="blue-text">0</strong>/100</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p id="score-message" class="center-align"></p>
+                            <div id="missed-items" class="center-align"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Play Again</a>
+        </div>
+    </div>
+
+    <footer class="page-footer blue darken-2">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6">
+                    <h5 class="white-text">Travelo</h5>
+                    <p class="grey-text text-lighten-4">Your trusted travel partner for unforgettable adventures around the world.</p>
+                </div>
+                <div class="col s12 m6">
+                    <h5 class="white-text">Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="white-text"><i class="material-icons">facebook</i></a>
+                        <a href="#" class="white-text"><i class="material-icons">insert_chart</i></a>
+                        <a href="#" class="white-text"><i class="material-icons">photo_camera</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2025 Travelo - All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/game.js"></script>
+</body>
+</html> 

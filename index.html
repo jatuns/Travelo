@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travelo - Your Travel Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hero-section {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .destination-card {
+            transition: transform 0.3s;
+        }
+        .destination-card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="blue darken-2">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo">Travelo</a>
+            <ul class="right">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="packages.html">Tour Packages</a></li>
+                <li><a href="reservation.html">Book Now</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="game.html">Packing Game</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="container">
+            <h1>Discover Your Next Adventure</h1>
+            <p class="flow-text">Explore beautiful destinations around the world with Travelo</p>
+            <a href="packages.html" class="btn-large waves-effect waves-light orange">View Tour Packages</a>
+        </div>
+    </div>
+
+    <div class="container section">
+        <h2 class="center-align">Popular Destinations</h2>
+        <div class="row">
+            <div class="col l4">
+                <div class="card destination-card">
+                    <div class="card-image">
+                        <img src="images/placeholder1.jpg" alt="Destination 1">
+                        <span class="card-title">Paris, France</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Experience the city of love with its iconic Eiffel Tower and charming streets.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="packages.html" class="blue-text">View Tours</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col l4">
+                <div class="card destination-card">
+                    <div class="card-image">
+                        <img src="images/placeholder2.jpg" alt="Destination 2">
+                        <span class="card-title">Bali, Indonesia</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Relax on beautiful beaches and immerse yourself in the unique Balinese culture.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="packages.html" class="blue-text">View Tours</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col l4">
+                <div class="card destination-card">
+                    <div class="card-image">
+                        <img src="images/placeholder3.jpg" alt="Destination 3">
+                        <span class="card-title">Santorini, Greece</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Enjoy the stunning white buildings and breathtaking views of the Aegean Sea.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="packages.html" class="blue-text">View Tours</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blue lighten-5 section">
+        <div class="container">
+            <h2 class="center-align">Why Choose Us</h2>
+            <div class="row">
+                <div class="col l4 center-align">
+                    <i class="material-icons large blue-text">flight</i>
+                    <h5>Best Travel Deals</h5>
+                    <p>We offer competitive prices on our tours with amazing deals.</p>
+                </div>
+                <div class="col l4 center-align">
+                    <i class="material-icons large blue-text">hotel</i>
+                    <h5>Comfortable Stay</h5>
+                    <p>Hand-picked accommodations to ensure your comfort.</p>
+                </div>
+                <div class="col l4 center-align">
+                    <i class="material-icons large blue-text">support_agent</i>
+                    <h5>24/7 Support</h5>
+                    <p>Our travel experts are available round the clock to assist you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer blue darken-2">
+        <div class="container">
+            <div class="row">
+                <div class="col l6">
+                    <h5 class="white-text">Travelo</h5>
+                    <p class="grey-text text-lighten-4">Your trusted travel partner for unforgettable adventures around the world.</p>
+                </div>
+                <div class="col l6">
+                    <h5 class="white-text">Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="white-text"><i class="material-icons">facebook</i></a>
+                        <a href="#" class="white-text"><i class="material-icons">insert_chart</i></a>
+                        <a href="#" class="white-text"><i class="material-icons">photo_camera</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2025 Travelo - All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html> 
